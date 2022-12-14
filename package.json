@@ -1,0 +1,11 @@
+{
+  "name": "to_do_list",
+  "version": "1.0.0",
+  "description": "Web implementation of a to-do list, purpose: get acquainted with using templates and express.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artem Gromakov",
+  "license": "ISC"
+}
