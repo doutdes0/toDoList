@@ -27,6 +27,7 @@ html {
     background-color: #A683E3;
     text-align: center;
     font-size: 0.8rem;
+    line-height: 2.5rem;
   }
   
   .item {
@@ -52,9 +53,8 @@ html {
   p {
     margin: 0;
     padding: 20px;
-    font-size: 20px;
-    font-weight: 200;
     color: #00204a;
+    font-size: 18px;
   }
   
   form {
@@ -71,6 +71,7 @@ html {
     color: #fff;
     font-size: 30px;
     border-width: 0;
+    padding-bottom: 5px;
   }
   
   input[type="text"] {
@@ -78,9 +79,8 @@ html {
     height: 60px;
     top: 10px;
     border: none;
+    font-size: 18px;
     background: transparent;
-    font-size: 20px;
-    font-weight: 200;
     width: 313px;
   }
   
@@ -91,8 +91,12 @@ html {
   }
   
   ::placeholder {
-    color: grey;
+    color: rgb(210, 209, 209);
     opacity: 1;
+  }
+
+  input:focus::placeholder {
+    color: transparent;
   }
   
   footer {
