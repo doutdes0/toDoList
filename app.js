@@ -11,7 +11,7 @@ app.use(express.static(__dirname));
 
 mongoose.connect('mongodb://127.0.0.1:27017/todolistDB')
 .then(
-    () => console.log('Connected!'),
+    () => console.log('DB connected!'),
     (err) => console.log(err)
 );
 
@@ -37,9 +37,23 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
     const item = req.body.listItem;
+    const del = req.body.delete;
+    if(item) {
     const newItem = new Item({item: item});
     newItem.save();
     res.redirect("/");
+    } else {
+    Item.deleteOne({_id: del}, (err, result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            console.log(result);
+            res.redirect("/");
+        }
+    });
+    }
+       
+    
 })
 
 app.listen(process.env.PORT || 3000, () => console.log("Server is running in port 3000."));

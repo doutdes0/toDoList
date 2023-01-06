@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
 * {
     box-sizing: border-box;
-    font-family: "Helvetica neue", "Verdana", sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -13,10 +15,11 @@ html {
   h1 {
     color: #fff;
     padding: 10px;
+    font-weight: 700;
   }
   
   .box {
-    max-width: 400px;
+    max-width: 500px;
     margin: 50px auto 0px;
     background: white;
     border-radius: 5px;
@@ -29,11 +32,17 @@ html {
     font-size: 0.8rem;
     line-height: 2.5rem;
   }
+
+  #heading:hover {
+    background-color: #8705a7;
+    transition: 0.5s;
+  }
   
   .item {
     min-height: 70px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     border-bottom: 1px solid #F1F1F1;
   }
   
@@ -47,7 +56,31 @@ html {
   }
   
   input[type="checkbox"] {
-    margin: 20px;
+    appearance: none;
+    background-color: #fff;
+    margin: 0 0 0 20px;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.1em solid rgb(63, 61, 61);
+    border-radius: 0.15em;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #A683E3;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
   }
   
   p {
@@ -55,11 +88,15 @@ html {
     padding: 20px;
     color: #00204a;
     font-size: 18px;
+    flex-grow: 2;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    max-width: 380px;
   }
   
   form {
     text-align: center;
-    margin-left: 20px;
+    margin-right: 20px;
   }
   
   button {
@@ -71,17 +108,23 @@ html {
     color: #fff;
     font-size: 30px;
     border-width: 0;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: #8705a7;
+    transition: 0.5s;
   }
   
   input[type="text"] {
     text-align: center;
     height: 60px;
-    top: 10px;
     border: none;
     font-size: 18px;
+    font-weight: 400;
     background: transparent;
-    width: 313px;
+    flex-grow: 3;
+    margin: 0 40px;
   }
   
   input[type="text"]:focus {
